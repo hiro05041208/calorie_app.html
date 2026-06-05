@@ -11,7 +11,7 @@
 html,body{height:100%;width:100%}
 body{background:#fff;overflow:hidden
 .app{font-family:sans-serif;width:100vw;height:100vh;height:100dvh;display:flex;flex-direction:column;background:#fff;overflow:hidden}
-.content-area{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.content-area{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:100px}
 .panel{display:none;padding:20px 16px}
 .panel.active{display:block}
 .metric-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
@@ -62,6 +62,7 @@ body{background:#fff;overflow:hidden
 .btn-primary{flex:1;padding:10px;background:var(--or);color:#fff;border:none;border-radius:22px;font-size:13px;font-weight:500;cursor:pointer}
 .btn-secondary{flex:1;padding:10px;background:#fff;color:var(--or);border:1.5px solid var(--or-border);border-radius:22px;font-size:13px;cursor:pointer}
 .chart-wrap{position:relative;height:440px;margin-bottom:10px}
+.weight-chart-wrap{position:relative;height:130px;margin-bottom:10px}
 .hist-legend{display:flex;gap:14px;font-size:12px;color:var(--or);margin-bottom:14px}
 .hist-legend span{display:flex;align-items:center;gap:4px}
 .dot{width:9px;height:9px;border-radius:2px;display:inline-block}
@@ -86,7 +87,7 @@ body{background:#fff;overflow:hidden
 .weight-log-diff.up{background:#FEF2F2;color:#B91C1C}
 .weight-log-diff.down{background:#F0FDF4;color:#166534}
 .weight-log-diff.same{background:var(--or-light);color:var(--or)}
-.bottom-nav{display:flex;background:#fff;border-top:2px solid var(--or-border);padding-bottom:env(safe-area-inset-bottom);flex-shrink:0}
+.bottom-nav{display:flex;background:#fff;border-top:2px solid var(--or-border);padding-bottom:env(safe-area-inset-bottom);position:fixed;bottom:0;left:0;right:0;z-index:100}
 .bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 2px;font-size:14px;font-weight:500;cursor:pointer;border:none;background:none;color:var(--or);opacity:0.5;transition:opacity .15s}
 .bnav-item svg{width:34px;height:34px;stroke:currentColor}
 .bnav-item.active{opacity:1;color:var(--or-dark)}
@@ -197,7 +198,7 @@ body{background:#fff;overflow:hidden
         <div class="hist-legend">
           <span><span class="dot" style="background:#F97316"></span>体重 (kg)</span>
         </div>
-        <div class="chart-wrap"><canvas id="weightChart"></canvas></div>
+        <div class="weight-chart-wrap"><canvas id="weightChart"></canvas></div>
       </div>
       <div class="section-title" style="margin-bottom:10px"><i class="ti ti-list"></i>記録一覧</div>
       <div id="weight-log-list"></div>
